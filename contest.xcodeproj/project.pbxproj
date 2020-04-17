@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		4CEFD1AF24495136000454BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD1AD24495136000454BE /* Main.storyboard */; };
 		4CEFD1B124495137000454BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD1B024495137000454BE /* Assets.xcassets */; };
 		4CEFD1B424495137000454BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD1B224495137000454BE /* LaunchScreen.storyboard */; };
+		4CEFD1BC2449754D000454BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD1BB2449754D000454BE /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4CEFD1B024495137000454BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CEFD1B324495137000454BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CEFD1B524495137000454BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CEFD1BB2449754D000454BE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 			children = (
 				4CEFD1A624495136000454BE /* contest */,
 				4CEFD1A524495136000454BE /* Products */,
+				4CEFD1BB2449754D000454BE /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,11 +102,12 @@
 				TargetAttributes = {
 					4CEFD1A324495136000454BE = {
 						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 4CEFD19F24495136000454BE /* Build configuration list for PBXProject "contest" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -125,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEFD1BC2449754D000454BE /* .gitignore in Resources */,
 				4CEFD1B424495137000454BE /* LaunchScreen.storyboard in Resources */,
 				4CEFD1B124495137000454BE /* Assets.xcassets in Resources */,
 				4CEFD1AF24495136000454BE /* Main.storyboard in Resources */,
@@ -274,8 +279,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -287,10 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7QW9T925MN;
 				INFOPLIST_FILE = contest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lky.contest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -305,10 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7QW9T925MN;
 				INFOPLIST_FILE = contest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lky.contest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
