@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>229946540483-ms063o0llbrsegk5gmdladfldltqjr6r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.229946540483-ms063o0llbrsegk5gmdladfldltqjr6r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBBZyE8PzLBu9KxjDRIgTJdCuHHj75c7AU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>229946540483</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lky.contest</string>
+	<key>PROJECT_ID</key>
+	<string>swift-contest</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swift-contest.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:229946540483:ios:79d17d8f8082e76b6cfd76</string>
+	<key>DATABASE_URL</key>
+	<string>https://swift-contest.firebaseio.com</string>
+</dict>
+</plist>
