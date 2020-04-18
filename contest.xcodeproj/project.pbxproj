@@ -10,6 +10,10 @@
 		2BA5C3E1EBFC75ED8F8DAACA /* Pods_contest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4285A48D0C1E8B60317A3A88 /* Pods_contest.framework */; };
 		4CA6234424498A6F009A37C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6234324498A6F009A37C5 /* GoogleService-Info.plist */; };
 		4CC31578244AB0A70049D48B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC31577244AB0A70049D48B /* HomeViewController.xib */; };
+		4CC3157D244ADC1D0049D48B /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3157C244ADC1D0049D48B /* Employee.swift */; };
+		4CC31580244ADCBB0049D48B /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3157F244ADCBB0049D48B /* Webservice.swift */; };
+		4CC31583244AE24A0049D48B /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC31582244AE24A0049D48B /* EmployeeListViewModel.swift */; };
+		4CC31585244AE8C20049D48B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC31584244AE8C20049D48B /* ContentView.swift */; };
 		4CEFD1A824495136000454BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD1A724495136000454BE /* AppDelegate.swift */; };
 		4CEFD1AA24495136000454BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD1A924495136000454BE /* SceneDelegate.swift */; };
 		4CEFD1AC24495136000454BE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD1AB24495136000454BE /* AuthViewController.swift */; };
@@ -24,6 +28,10 @@
 		4285A48D0C1E8B60317A3A88 /* Pods_contest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_contest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA6234324498A6F009A37C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4CC31577244AB0A70049D48B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4CC3157C244ADC1D0049D48B /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		4CC3157F244ADCBB0049D48B /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		4CC31582244AE24A0049D48B /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		4CC31584244AE8C20049D48B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4CEFD1A424495136000454BE /* Contest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEFD1A724495136000454BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEFD1A924495136000454BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +75,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4CC3157B244ADB7F0049D48B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4CC3157C244ADC1D0049D48B /* Employee.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4CC3157E244ADC8F0049D48B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4CC3157F244ADCBB0049D48B /* Webservice.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4CC31581244AE1F60049D48B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4CC31582244AE24A0049D48B /* EmployeeListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		4CEFD19B24495136000454BE = {
 			isa = PBXGroup;
 			children = (
@@ -89,10 +121,14 @@
 		4CEFD1A624495136000454BE /* contest */ = {
 			isa = PBXGroup;
 			children = (
+				4CC31581244AE1F60049D48B /* ViewModels */,
+				4CC3157E244ADC8F0049D48B /* Services */,
+				4CC3157B244ADB7F0049D48B /* Models */,
 				4CEFD1A724495136000454BE /* AppDelegate.swift */,
 				4CEFD1A924495136000454BE /* SceneDelegate.swift */,
 				4CEFD1AB24495136000454BE /* AuthViewController.swift */,
 				4CF037772449A88A00F49C1B /* HomeViewController.swift */,
+				4CC31584244AE8C20049D48B /* ContentView.swift */,
 				4CEFD1AD24495136000454BE /* Main.storyboard */,
 				4CC31577244AB0A70049D48B /* HomeViewController.xib */,
 				4CEFD1B024495137000454BE /* Assets.xcassets */,
@@ -231,7 +267,11 @@
 			files = (
 				4CEFD1AC24495136000454BE /* AuthViewController.swift in Sources */,
 				4CEFD1A824495136000454BE /* AppDelegate.swift in Sources */,
+				4CC31585244AE8C20049D48B /* ContentView.swift in Sources */,
+				4CC31580244ADCBB0049D48B /* Webservice.swift in Sources */,
 				4CEFD1AA24495136000454BE /* SceneDelegate.swift in Sources */,
+				4CC3157D244ADC1D0049D48B /* Employee.swift in Sources */,
+				4CC31583244AE24A0049D48B /* EmployeeListViewModel.swift in Sources */,
 				4CF037782449A88A00F49C1B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

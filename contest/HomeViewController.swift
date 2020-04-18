@@ -7,19 +7,24 @@
 //
 
 import UIKit
+//se importa la librería para realizar autenticación de usuarios
 import FirebaseAuth
 
+//se declara el tipo de autenticación
 enum ProviderType: String {
     case basic
 }
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var closeSessionButton: UIButton!
+//declaracion de los elementos y variables
     
+    @IBOutlet weak var closeSessionButton: UIButton!
+
     private let email: String
     private let provider: ProviderType
     
+//constructor que inicializa los elementos para la autenticación
     init (email: String, provider: ProviderType){
         self.email = email
         self.provider = provider
@@ -32,10 +37,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//se establecen opciones para los elemntos de la barra de navegación
+        self.navigationItem.setHidesBackButton(true, animated: false)
         title = "Lista de Usuarios"
-        
     }
     
+//método para cerrar sesión
     @IBAction func closeSessionButtonAction(_ sender: Any) {
         switch provider {
         case .basic:
@@ -43,10 +50,10 @@ class HomeViewController: UIViewController {
                 try Auth.auth().signOut()
                 navigationController?.popViewController(animated: true)
             }catch{
-                //Ejecutar funcionalidad cuando se produce un error
+                //TO DO: funcionalidad cuando se produce un error
             }
         }
     }
     
-
 }
+

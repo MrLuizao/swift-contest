@@ -7,11 +7,13 @@
 //
 
 import UIKit
+//se importa la librería para realizar autenticación de usuarios
 import FirebaseAuth
 
 
 class AuthViewController: UIViewController {
-
+    
+//se declaran los elementos de la vista
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginDataView: UIView!
     @IBOutlet weak var loginUserLineView: UIView!
@@ -21,28 +23,45 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var logginButton: UIButton!
     @IBOutlet weak var registryButton: UIButton!
     
+//variables para los colores en el view controller
     private let primaryColor = UIColor(displayP3Red: 154/255, green: 60/255, blue: 187/255, alpha: 1)
     private let secondaryColor = UIColor(displayP3Red: 251/255, green: 52/255, blue: 72/255, alpha: 1)
     private let tertiaryColor = UIColor(displayP3Red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
     private let standarColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//se crea método para reconocer gestos al hacer tap
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AuthViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
+        
+//se inicializan los elementos asociados a la vista
         logginButton.layer.cornerRadius = 3
         logginButton.backgroundColor = primaryColor
         logginButton.setTitleColor(standarColor, for: .normal)
         registryButton.setTitleColor(primaryColor, for: .normal)
     }
     
+    override public func viewWillAppear(_ animated: Bool) {
+//se asignan ediciones a la vista antes de mostarse
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+
+    override public func viewWillDisappear(_ animated: Bool) {
+//se asignan ediciones a la vista antes de ocultarse
+        self.navigationController?.isNavigationBarHidden = false
+        super.viewWillDisappear(animated)
+    }
+    
+//función para esconder el teclado al hacer tap
     @objc func dismissKeyboard() {
-        //Las vistas y toda la jerarquía renuncia a responder, para esconder el teclado
         view.endEditing(true)
     }
     
+//método para realizar un login de usuarios
     @IBAction func logginButtonAction(_ sender: Any) {
         
         if let email = userTextField.text, let password = passTextField.text{
@@ -69,7 +88,7 @@ class AuthViewController: UIViewController {
 
     }
 
-   
+//método para realizar un registro de usuarios
     @IBAction func registryButtonAction(_ sender: Any) {
         
         if let email = userTextField.text, let password = passTextField.text{
