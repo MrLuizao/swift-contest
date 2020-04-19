@@ -65,13 +65,13 @@ class AuthViewController: UIViewController {
     @IBAction func logginButtonAction(_ sender: Any) {
         
         if let email = userTextField.text, let password = passTextField.text{
-            
+
             Auth.auth().signIn(withEmail: email, password: password){
                 (result, error) in
 
                 if let result = result, error == nil{
                     self.navigationController?
-                        .pushViewController(HomeViewController(email: result.user.email!, provider: .basic),animated: true)
+                        .pushViewController(ListViewController(email: result.user.email!, provider: .basic),animated: true)
                 }else{
                     let alertController = UIAlertController(
                         title: "Error",
@@ -98,7 +98,7 @@ class AuthViewController: UIViewController {
 
                 if let result = result, error == nil{
                     self.navigationController?
-                        .pushViewController(HomeViewController(email: result.user.email!, provider: .basic),animated: true)
+                        .pushViewController(ListViewController(email: result.user.email!, provider: .basic),animated: true)
 
                 }else{
                     let alertController = UIAlertController(
