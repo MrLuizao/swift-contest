@@ -17,7 +17,6 @@ struct ContentView: View {
         List(self.employeListVM.employees, id: \.email){ employee in
 
             Text(employee.name)
-            
         }
     }
     

@@ -9,5 +9,7 @@ target 'contest' do
   # Pods for contest
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end
