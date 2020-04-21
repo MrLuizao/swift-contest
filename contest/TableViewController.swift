@@ -15,9 +15,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 //declaracion de los elementos y variables
     @IBOutlet weak var tableApiList: UITableView!
     
-    var arr_data_id = [String]()
-    var arr_data_name = [String]()
-    
+    var dataId = [String]()
+    var dataName = [String]()
     
     override func viewDidLoad() {//inicia ciclo de vida de la vista
         super.viewDidLoad()
@@ -43,16 +42,16 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 let resultArray = items!["data"]
                 
-                self.arr_data_id.removeAll()
-                self.arr_data_name.removeAll()
+//                self.dataId.removeAll()
+//                self.dataName.removeAll()
                 
                 for i in resultArray.arrayValue{
                     print(i)
                     let id = i["id"].stringValue
-                    self.arr_data_id.append(id)
+                    self.dataId.append(id)
                     
                     let name = i["first_name"].stringValue
-                    self.arr_data_name.append(name)
+                    self.dataName.append(name)
                 }
                 
                 self.tableApiList.reloadData()
@@ -69,18 +68,19 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 //se establecen los valores de la tabla
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr_data_id.count
+        return dataId.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = arr_data_name[indexPath.row]
+        cell.textLabel?.text = dataName[indexPath.row]
         cell.accessoryType = .disclosureIndicator //Indicador de acciòn al final de la fila
         return cell
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showdetail", sender: dataName[indexPath.row])
+        print(dataName[indexPath.row])
     }
 
 

@@ -186,11 +186,40 @@
                     <navigationItem key="navigationItem" id="Eg6-Rv-N8P"/>
                     <connections>
                         <outlet property="tableApiList" destination="Pkm-Ne-Ofm" id="kak-el-vp5"/>
+                        <segue destination="xWh-L1-gTi" kind="show" identifier="showdetail" id="3bX-U0-X3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbW-el-tU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1367" y="100"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="NUX-w4-oNF">
+            <objects>
+                <viewController id="xWh-L1-gTi" customClass="DetailViewController" customModule="Contest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Aw-w0-eqj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LkY Co." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O76-Nq-ifR">
+                                <rect key="frame" x="157" y="210" width="101" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="SRH-Gd-Je0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9De-fR-GxH"/>
+                    <connections>
+                        <outlet property="labelName" destination="O76-Nq-ifR" id="xI5-Hk-fHK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Kl-fB-lgD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-558" y="98"/>
         </scene>
     </scenes>
     <resources>
