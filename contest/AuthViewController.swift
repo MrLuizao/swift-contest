@@ -69,9 +69,12 @@ class AuthViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password){
                 (result, error) in
 
-                if let result = result, error == nil{
-                    self.navigationController?
-                        .pushViewController(ListViewController(email: result.user.email!, provider: .basic),animated: true)
+                if let _ = result, error == nil{
+                    
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let viewController = storyBoard.instantiateViewController(withIdentifier: "table")
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                    
                 }else{
                     let alertController = UIAlertController(
                         title: "Error",
@@ -96,10 +99,11 @@ class AuthViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) {
                 (result, error) in
 
-                if let result = result, error == nil{
-                    self.navigationController?
-                        .pushViewController(ListViewController(email: result.user.email!, provider: .basic),animated: true)
-
+                if let _ = result, error == nil{
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let viewController = storyBoard.instantiateViewController(withIdentifier: "table")
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                    
                 }else{
                     let alertController = UIAlertController(
                         title: "Error",
