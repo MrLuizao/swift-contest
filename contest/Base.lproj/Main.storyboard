@@ -186,7 +186,7 @@
                     <navigationItem key="navigationItem" id="Eg6-Rv-N8P"/>
                     <connections>
                         <outlet property="tableApiList" destination="Pkm-Ne-Ofm" id="kak-el-vp5"/>
-                        <segue destination="xWh-L1-gTi" kind="show" identifier="showdetail" id="3bX-U0-X3q"/>
+                        <segue destination="xWh-L1-gTi" kind="modal" identifier="showdetail" id="3bX-U0-X3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbW-el-tU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,21 +201,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LkY Co." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O76-Nq-ifR">
-                                <rect key="frame" x="157" y="210" width="101" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegeta" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziy-Yc-ROD">
+                                <rect key="frame" x="132" y="98" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="OhR-W5-cHf"/>
+                                    <constraint firstAttribute="width" constant="150" id="gD7-Aq-BJb"/>
+                                    <constraint firstAttribute="height" constant="150" id="t3U-Dx-GZm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="xuy-Gg-lMJ"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-KQ-BL3">
+                                <rect key="frame" x="20" y="295" width="374" height="234"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veD-jD-SZU">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hj-qR-DCj">
+                                        <rect key="frame" x="0.0" y="41.5" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-Ad-wVX">
+                                        <rect key="frame" x="0.0" y="83" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8B-Y4-YRh">
+                                        <rect key="frame" x="0.0" y="124.5" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-rd-h0z">
+                                        <rect key="frame" x="0.0" y="166" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc1-6b-G7r">
+                                        <rect key="frame" x="0.0" y="207.5" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kjq-KQ-BL3" firstAttribute="leading" secondItem="SRH-Gd-Je0" secondAttribute="leading" constant="20" id="IcF-IW-0iw"/>
+                            <constraint firstItem="kjq-KQ-BL3" firstAttribute="top" secondItem="SRH-Gd-Je0" secondAttribute="top" constant="295" id="OB1-WG-wiD"/>
+                            <constraint firstItem="ziy-Yc-ROD" firstAttribute="centerX" secondItem="kjq-KQ-BL3" secondAttribute="centerX" id="cks-g2-hSL"/>
+                            <constraint firstItem="SRH-Gd-Je0" firstAttribute="trailing" secondItem="kjq-KQ-BL3" secondAttribute="trailing" constant="20" id="e1l-UP-oG6"/>
+                            <constraint firstItem="ziy-Yc-ROD" firstAttribute="top" secondItem="SRH-Gd-Je0" secondAttribute="top" constant="98" id="nij-Bg-vw6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SRH-Gd-Je0"/>
                     </view>
                     <navigationItem key="navigationItem" id="9De-fR-GxH"/>
-                    <connections>
-                        <outlet property="labelName" destination="O76-Nq-ifR" id="xI5-Hk-fHK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Kl-fB-lgD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,5 +271,6 @@
     </scenes>
     <resources>
         <image name="logo" width="200" height="200"/>
+        <image name="vegeta" width="225" height="225"/>
     </resources>
 </document>
