@@ -15,8 +15,38 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 //declaracion de los elementos y variables
     @IBOutlet weak var tableApiList: UITableView!
     
-    var dataId = [String]()
+    var dataPhoto = [String]()
     var dataName = [String]()
+    var dataLast = [String]()
+    var dataMail = [String]()
+    var pushedRow = 0
+    
+//se establecen los valores de la tabla
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataName.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = dataName[indexPath.row]
+        cell.accessoryType = .disclosureIndicator //Indicador de acciòn al final de la fila
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailCtrl = storyBoard.instantiateViewController(withIdentifier: "detailView") as! DetailViewController
+        
+        //detailCtrl.image = dataPhoto[indexPath.row]
+        detailCtrl.first_name = dataName[indexPath.row]
+        detailCtrl.last_name = dataLast[indexPath.row]
+        detailCtrl.email = dataMail[indexPath.row]
+        
+        self.navigationController?.pushViewController(detailCtrl, animated: true)
+
+    }
     
     override func viewDidLoad() {//inicia ciclo de vida de la vista
         super.viewDidLoad()
@@ -35,25 +65,27 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             switch resp.result{
                 
             case .success:
-                print(resp.result)
-                
+
                 let items = try? JSON(data: resp.data!)
-                print(items!["data"])
-                
+
                 let resultArray = items!["data"]
-                
-//                self.dataId.removeAll()
-//                self.dataName.removeAll()
-                
+
                 for i in resultArray.arrayValue{
-                    print(i)
-                    let id = i["id"].stringValue
-                    self.dataId.append(id)
+
+                    let photo = i["avatar"].stringValue
+                    self.dataPhoto.append(photo)
                     
                     let name = i["first_name"].stringValue
                     self.dataName.append(name)
+                    
+                    let last = i["last_name"].stringValue
+                    self.dataLast.append(last)
+                    
+                    let mail = i["email"].stringValue
+                    self.dataMail.append(mail)
+
                 }
-                
+
                 self.tableApiList.reloadData()
                 break
                 
@@ -66,22 +98,5 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     
     }
-//se establecen los valores de la tabla
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataId.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = dataName[indexPath.row]
-        cell.accessoryType = .disclosureIndicator //Indicador de acciòn al final de la fila
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showdetail", sender: dataName[indexPath.row])
-        print(dataName[indexPath.row])
-    }
-
 
 }

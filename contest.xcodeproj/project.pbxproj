@@ -129,12 +129,12 @@
 				4CC31584244AE8C20049D48B /* ContentView.swift */,
 				4CEFD1AB24495136000454BE /* AuthViewController.swift */,
 				4CBC5B9D244EB6B400170410 /* TableViewController.swift */,
+				4CBC5B9F244EC0BD00170410 /* DetailViewController.swift */,
 				4CEFD1AD24495136000454BE /* Main.storyboard */,
 				4CEFD1B024495137000454BE /* Assets.xcassets */,
 				4CEFD1B224495137000454BE /* LaunchScreen.storyboard */,
 				4CEFD1B524495137000454BE /* Info.plist */,
 				4CA6234324498A6F009A37C5 /* GoogleService-Info.plist */,
-				4CBC5B9F244EC0BD00170410 /* DetailViewController.swift */,
 			);
 			path = contest;
 			sourceTree = "<group>";

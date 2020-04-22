@@ -154,21 +154,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="r1b-9g-hUQ" style="IBUITableViewCellStyleDefault" id="hWz-30-J0b">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hWz-30-J0b">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hWz-30-J0b" id="vBR-Oe-cDc">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r1b-9g-hUQ">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -186,7 +177,7 @@
                     <navigationItem key="navigationItem" id="Eg6-Rv-N8P"/>
                     <connections>
                         <outlet property="tableApiList" destination="Pkm-Ne-Ofm" id="kak-el-vp5"/>
-                        <segue destination="xWh-L1-gTi" kind="modal" identifier="showdetail" id="3bX-U0-X3q"/>
+                        <segue destination="xWh-L1-gTi" kind="presentation" identifier="showdetail" id="3bX-U0-X3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbW-el-tU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,20 +187,11 @@
         <!--Detail View Controller-->
         <scene sceneID="NUX-w4-oNF">
             <objects>
-                <viewController id="xWh-L1-gTi" customClass="DetailViewController" customModule="Contest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailView" id="xWh-L1-gTi" customClass="DetailViewController" customModule="Contest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Aw-w0-eqj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegeta" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziy-Yc-ROD">
-                                <rect key="frame" x="132" y="98" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="OhR-W5-cHf"/>
-                                    <constraint firstAttribute="width" constant="150" id="gD7-Aq-BJb"/>
-                                    <constraint firstAttribute="height" constant="150" id="t3U-Dx-GZm"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="xuy-Gg-lMJ"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-KQ-BL3">
                                 <rect key="frame" x="20" y="295" width="374" height="234"/>
                                 <subviews>
@@ -251,6 +233,15 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegeta" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziy-Yc-ROD">
+                                <rect key="frame" x="132" y="98" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="OhR-W5-cHf"/>
+                                    <constraint firstAttribute="width" constant="150" id="gD7-Aq-BJb"/>
+                                    <constraint firstAttribute="height" constant="150" id="t3U-Dx-GZm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="xuy-Gg-lMJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -263,6 +254,12 @@
                         <viewLayoutGuide key="safeArea" id="SRH-Gd-Je0"/>
                     </view>
                     <navigationItem key="navigationItem" id="9De-fR-GxH"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="xc1-6b-G7r" id="NGk-c6-3w0"/>
+                        <outlet property="imageView" destination="ziy-Yc-ROD" id="Q5Z-AG-db6"/>
+                        <outlet property="lastnameLabel" destination="e8B-Y4-YRh" id="e4D-Ll-9Iq"/>
+                        <outlet property="nameLabel" destination="6Hj-qR-DCj" id="ogx-Ki-weG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Kl-fB-lgD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
