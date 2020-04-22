@@ -39,7 +39,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let detailCtrl = storyBoard.instantiateViewController(withIdentifier: "detailView") as! DetailViewController
         
-        //detailCtrl.image = dataPhoto[indexPath.row]
+        detailCtrl.avatar = dataPhoto[indexPath.row]
         detailCtrl.first_name = dataName[indexPath.row]
         detailCtrl.last_name = dataLast[indexPath.row]
         detailCtrl.email = dataMail[indexPath.row]
