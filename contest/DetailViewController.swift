@@ -9,19 +9,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
+//se asigna un tipado a las variables
+    var avatar = String()
+    var first_name = String()
+    var last_name = String()
+    var email = String()
+    
 //se declaran los elementos de la vista
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastnameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    
-//se asigna un tipado a las variables
-    var avatar = ""
-    var first_name = ""
-    var last_name = ""
-    var email = ""
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

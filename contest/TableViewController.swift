@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import Alamofire
 import SwiftyJSON
 
@@ -21,33 +22,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var dataMail = [String]()
     var pushedRow = 0
     
-//se establecen los valores de la tabla
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataName.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = dataName[indexPath.row]
-        cell.accessoryType = .disclosureIndicator //Indicador de acciòn al final de la fila
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let detailCtrl = storyBoard.instantiateViewController(withIdentifier: "detailView") as! DetailViewController
-        
-        detailCtrl.avatar = dataPhoto[indexPath.row]
-        detailCtrl.first_name = dataName[indexPath.row]
-        detailCtrl.last_name = dataLast[indexPath.row]
-        detailCtrl.email = dataMail[indexPath.row]
-        
-        self.navigationController?.pushViewController(detailCtrl, animated: true)
-
-    }
-    
     override func viewDidLoad() {//inicia ciclo de vida de la vista
         super.viewDidLoad()
         
@@ -56,8 +31,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         title = "Lista de Usuarios"
         
 //variables y configuracion del metodo get que pinta los datos en la tabla
-        self.tableApiList.delegate = self
-        self.tableApiList.dataSource = self
+//        self.tableApiList.delegate = self
+//        self.tableApiList.dataSource = self
         
         let apiurl = "https://reqres.in/api/users"
         
@@ -83,7 +58,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                     
                     let mail = i["email"].stringValue
                     self.dataMail.append(mail)
-
                 }
 
                 self.tableApiList.reloadData()
@@ -98,5 +72,32 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     
     }
+    
+//se establecen los valores de la tabla y las celdas
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataName.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        cell.labelCell.text! = dataName[indexPath.row]
+        cell.accessoryType = .disclosureIndicator //Indicador de acciòn al final de la fila
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailCtrl = storyBoard.instantiateViewController(withIdentifier: "detailView") as! DetailViewController
+        
+        detailCtrl.avatar = dataPhoto[indexPath.row]
+        detailCtrl.first_name = dataName[indexPath.row]
+        detailCtrl.last_name = dataLast[indexPath.row]
+        detailCtrl.email = dataMail[indexPath.row]
+        
+        self.navigationController?.pushViewController(detailCtrl, animated: true)
+
+    }
+    
 }
