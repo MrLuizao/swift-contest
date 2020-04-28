@@ -23,25 +23,17 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var logginButton: UIButton!
     @IBOutlet weak var registryButton: UIButton!
     
-//variables para los colores en el view controller
-    private let primaryColor = UIColor(displayP3Red: 154/255, green: 60/255, blue: 187/255, alpha: 1)
-    private let secondaryColor = UIColor(displayP3Red: 251/255, green: 52/255, blue: 72/255, alpha: 1)
-    private let tertiaryColor = UIColor(displayP3Red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
-    private let standarColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//se crea método para reconocer gestos al hacer tap
+//se instancia funcionalidad para reconocer gestos al hacer tap
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AuthViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
 //se inicializan los elementos asociados a la vista
-        logginButton.layer.cornerRadius = 3
-        logginButton.backgroundColor = primaryColor
-        logginButton.setTitleColor(standarColor, for: .normal)
-        registryButton.setTitleColor(primaryColor, for: .normal)
+        logginButton.loginBTN()
+        registryButton.setTitleColor(CustomColor().primaryColor, for: .normal)
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -61,64 +53,53 @@ class AuthViewController: UIViewController {
         view.endEditing(true)
     }
     
+//funcion que valida los datos y regresa un mensaje o navega al home al iniciar sesion
+    private func initSession(result: AuthDataResult?, error:Error?){
+         
+        if let _ = result, error == nil{
+                
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "table")
+            self.navigationController?.pushViewController(viewController, animated: true)
+            
+        }else{
+            let alertController = UIAlertController(
+                title: "Error",
+                message: "Error al iniciar sesión",
+                preferredStyle: .alert)
+
+            alertController.addAction( UIAlertAction(
+                title: "Aceptar", style: .default))
+
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    
 //método para realizar un login de usuarios
     @IBAction func logginButtonAction(_ sender: Any) {
         
-        if let email = userTextField.text, let password = passTextField.text{
+        if let loginMail = userTextField.text, let loginPass = passTextField.text{
 
-            Auth.auth().signIn(withEmail: email, password: password){
+            Auth.auth().signIn(withEmail: loginMail, password: loginPass){
                 (result, error) in
-
-                if let _ = result, error == nil{
-                    
-                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                    let viewController = storyBoard.instantiateViewController(withIdentifier: "table")
-                    self.navigationController?.pushViewController(viewController, animated: true)
-                    
-                }else{
-                    let alertController = UIAlertController(
-                        title: "Error",
-                        message: "Error al iniciar sesión",
-                        preferredStyle: .alert)
-
-                    alertController.addAction( UIAlertAction(
-                        title: "Aceptar", style: .default))
-
-                    self.present(alertController, animated: true, completion: nil)
-                }
+                self.initSession(result: result, error: error)
             }
         }
-
     }
 
 //método para realizar un registro de usuarios
     @IBAction func registryButtonAction(_ sender: Any) {
         
-        if let email = userTextField.text, let password = passTextField.text{
+        if let registMail = userTextField.text, let registPass = passTextField.text{
 
-            Auth.auth().createUser(withEmail: email, password: password) {
+            Auth.auth().createUser(withEmail: registMail, password: registPass) {
                 (result, error) in
-
-                if let _ = result, error == nil{
-                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                    let viewController = storyBoard.instantiateViewController(withIdentifier: "table")
-                    self.navigationController?.pushViewController(viewController, animated: true)
-                    
-                }else{
-                    let alertController = UIAlertController(
-                        title: "Error",
-                        message: "Error en el registro",
-                        preferredStyle: .alert)
-
-                    alertController.addAction( UIAlertAction(
-                        title: "Aceptar", style: .default))
-
-                    self.present(alertController, animated: true, completion: nil)
-                }
-
+                 self.initSession(result: result, error: error)
             }
         }
     }
+    
     
 }
 

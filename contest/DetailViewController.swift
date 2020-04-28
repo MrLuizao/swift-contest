@@ -25,34 +25,19 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//se llama la funcion de la extension para convertir la url de la imagen
+//se valida el tipo de imagen para mostrarla en la vista
         guard let imageUrl:URL = URL(string: avatar) else {
             return
         }
         
 //se establecen los valores a los elementos
         imageView.layer.cornerRadius = imageView.bounds.height / 2
-        imageView.loadImge(withUrl: imageUrl)
+        imageView.imageFromApi(withUrl: imageUrl)
         nameLabel.text = first_name
         lastnameLabel.text = last_name
         emailLabel.text = email
         
     }
 
-}
-
-//extension que funciòn que convierte la url de la imagen en string
-extension UIImageView {
-    func loadImge(withUrl url: URL) {
-       DispatchQueue.global().async { [weak self] in
-           if let imageData = try? Data(contentsOf: url) {
-               if let image = UIImage(data: imageData) {
-                   DispatchQueue.main.async {
-                       self?.image = image
-                   }
-               }
-           }
-       }
-   }
 }
 

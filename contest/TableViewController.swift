@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+//librerias para la peticion y muestra de datos desde un api
 import Alamofire
 import SwiftyJSON
 
@@ -29,10 +29,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 //se establecen opciones para los elemntos de la barra de navegación
         self.navigationItem.setHidesBackButton(true, animated: false)
         title = "Lista de Usuarios"
-        
-//variables y configuracion del metodo get que pinta los datos en la tabla
-//        self.tableApiList.delegate = self
-//        self.tableApiList.dataSource = self
+//se inicializa la funcion que obtiene los datos desde la api
+        self.getData()
+    }
+    
+    
+//metodo que realiza peticion al servicio
+    func getData(){
         
         let apiurl = "https://reqres.in/api/users"
         
@@ -70,7 +73,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
 
         }
-    
+
     }
     
 //se establecen los valores de la tabla y las celdas
@@ -99,5 +102,5 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationController?.pushViewController(detailCtrl, animated: true)
 
     }
-    
+
 }
