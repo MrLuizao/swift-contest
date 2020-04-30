@@ -20,8 +20,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var dataName = [String]()
     var dataLast = [String]()
     var dataMail = [String]()
-    var pushedRow = 0
-    
 
     override func viewDidLoad() {//inicia ciclo de vida de la vista
         super.viewDidLoad()
@@ -30,9 +28,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationItem.setHidesBackButton(true, animated: false)
         title = "Lista de Usuarios"
 //se inicializa la funcion que obtiene los datos desde la api
-        self.getData()
+        getData()
     }
-    
     
 //metodo que realiza peticion al servicio
     func getData(){
