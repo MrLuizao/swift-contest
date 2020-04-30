@@ -19,7 +19,7 @@ class TableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
 //valores por defecto de las celdas
-        super.setSelected(false, animated: true)
+        super.setSelected(selected, animated: animated)
     }
 
 }

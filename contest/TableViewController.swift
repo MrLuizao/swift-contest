@@ -80,14 +80,16 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         cell.labelCell.text! = dataName[indexPath.row]
         cell.accessoryType = .disclosureIndicator //Indicador de acciòn al final de la fila
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row selecccionada: (indexPath.row)")
+        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let detailCtrl = storyBoard.instantiateViewController(withIdentifier: "detailView") as! DetailViewController
         

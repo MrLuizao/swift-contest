@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
+        super.viewDidAppear( animated )
 //se valida el tipo de imagen para mostrarla en la vista
         guard let imageUrl:URL = URL(string: avatar) else {
             return
