@@ -185,11 +185,33 @@
                                     <outlet property="delegate" destination="Iey-OH-WTp" id="hr4-ye-rO7"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plp-00-KNv">
+                                <rect key="frame" x="16" y="787" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="3o7-EJ-09K"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="ZmO-oa-FwC"/>
+                                    <constraint firstAttribute="height" constant="40" id="iI4-3q-YZd"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="psq-4A-d1N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Cerrar Sesión">
+                                    <color key="titleColor" red="0.60392156860000001" green="0.23529411759999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeSessionBtnAction:" destination="Iey-OH-WTp" eventType="touchUpInside" id="9vG-ad-L1n"/>
+                                    <action selector="registryButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yQM-fX-5b4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="n60-fs-p1C" firstAttribute="trailing" secondItem="plp-00-KNv" secondAttribute="trailing" constant="16" id="233-S9-9OZ"/>
                             <constraint firstItem="n60-fs-p1C" firstAttribute="trailing" secondItem="Pkm-Ne-Ofm" secondAttribute="trailing" id="6UG-da-D2w"/>
+                            <constraint firstItem="n60-fs-p1C" firstAttribute="bottom" secondItem="plp-00-KNv" secondAttribute="bottom" constant="35" id="8et-fq-EcD"/>
+                            <constraint firstItem="n60-fs-p1C" firstAttribute="trailing" secondItem="plp-00-KNv" secondAttribute="trailing" constant="16" id="HjQ-bj-1fl"/>
                             <constraint firstItem="Pkm-Ne-Ofm" firstAttribute="top" secondItem="n60-fs-p1C" secondAttribute="top" id="PTT-lX-uHl"/>
+                            <constraint firstItem="plp-00-KNv" firstAttribute="leading" secondItem="n60-fs-p1C" secondAttribute="leading" constant="16" id="PVj-hk-mvx"/>
+                            <constraint firstItem="plp-00-KNv" firstAttribute="leading" secondItem="n60-fs-p1C" secondAttribute="leading" constant="16" id="Rax-Gl-66r"/>
                             <constraint firstItem="Pkm-Ne-Ofm" firstAttribute="leading" secondItem="n60-fs-p1C" secondAttribute="leading" id="XkB-AP-xiq"/>
                             <constraint firstItem="n60-fs-p1C" firstAttribute="bottom" secondItem="Pkm-Ne-Ofm" secondAttribute="bottom" constant="81" id="qjT-kF-Kvd"/>
                         </constraints>
@@ -254,21 +276,35 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziy-Yc-ROD">
-                                <rect key="frame" x="132" y="124" width="150" height="150"/>
+                                <rect key="frame" x="119.5" y="124" width="175" height="175"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="OhR-W5-cHf"/>
-                                    <constraint firstAttribute="width" constant="150" id="gD7-Aq-BJb"/>
-                                    <constraint firstAttribute="height" constant="150" id="t3U-Dx-GZm"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="xuy-Gg-lMJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="OhR-W5-cHf"/>
+                                    <constraint firstAttribute="width" constant="175" id="gD7-Aq-BJb"/>
+                                    <constraint firstAttribute="height" constant="175" id="t3U-Dx-GZm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="175" id="xuy-Gg-lMJ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1i-hl-A7n">
+                                <rect key="frame" x="20" y="809" width="69" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Regresar">
+                                    <color key="titleColor" red="0.60392156860000001" green="0.23529411759999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToList:" destination="xWh-L1-gTi" eventType="touchUpInside" id="fH0-Qw-u0V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SRH-Gd-Je0" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h1i-hl-A7n" secondAttribute="trailing" symbolic="YES" id="0hL-ul-MEV"/>
+                            <constraint firstItem="h1i-hl-A7n" firstAttribute="leading" secondItem="SRH-Gd-Je0" secondAttribute="leading" constant="20" id="5dQ-5D-XqD"/>
                             <constraint firstItem="kjq-KQ-BL3" firstAttribute="leading" secondItem="SRH-Gd-Je0" secondAttribute="leading" constant="20" id="IcF-IW-0iw"/>
                             <constraint firstItem="kjq-KQ-BL3" firstAttribute="top" secondItem="SRH-Gd-Je0" secondAttribute="top" constant="295" id="OB1-WG-wiD"/>
+                            <constraint firstItem="h1i-hl-A7n" firstAttribute="leading" secondItem="SRH-Gd-Je0" secondAttribute="leading" constant="20" id="Omt-FE-lcs"/>
                             <constraint firstItem="ziy-Yc-ROD" firstAttribute="centerX" secondItem="kjq-KQ-BL3" secondAttribute="centerX" id="cks-g2-hSL"/>
                             <constraint firstItem="SRH-Gd-Je0" firstAttribute="trailing" secondItem="kjq-KQ-BL3" secondAttribute="trailing" constant="20" id="e1l-UP-oG6"/>
+                            <constraint firstItem="SRH-Gd-Je0" firstAttribute="bottom" secondItem="h1i-hl-A7n" secondAttribute="bottom" constant="20" id="le1-87-aXp"/>
                             <constraint firstItem="ziy-Yc-ROD" firstAttribute="top" secondItem="SRH-Gd-Je0" secondAttribute="top" constant="80" id="nij-Bg-vw6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SRH-Gd-Je0"/>
@@ -283,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Kl-fB-lgD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-558" y="98"/>
+            <point key="canvasLocation" x="-559.4202898550725" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

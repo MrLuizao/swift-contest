@@ -101,5 +101,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationController?.pushViewController(detailCtrl, animated: true)
 
     }
-
+    @IBAction func closeSessionBtnAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
+
+
+
