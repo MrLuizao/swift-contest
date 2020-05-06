@@ -64,8 +64,8 @@ class AuthViewController: UIViewController {
             
         }else{
             let alertController = UIAlertController(
-                title: "Error",
-                message: "Error al iniciar sesión",
+                title: "Error al iniciar sesión",
+                message: "Ingresa correo y contraseña válidos",
                 preferredStyle: .alert)
 
             alertController.addAction( UIAlertAction(
@@ -88,18 +88,8 @@ class AuthViewController: UIViewController {
         }
     }
 
-//método para realizar un registro de usuarios
     @IBAction func registryButtonAction(_ sender: Any) {
-        
-        if let registMail = userTextField.text, let registPass = passTextField.text{
-
-            Auth.auth().createUser(withEmail: registMail, password: registPass) {
-                (result, error) in
-                 self.initSession(result: result, error: error)
-            }
-        }
+//navegacion hacia el modal de registro de usuarios
     }
-    
-    
 }
 

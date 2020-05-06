@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2BA5C3E1EBFC75ED8F8DAACA /* Pods_contest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4285A48D0C1E8B60317A3A88 /* Pods_contest.framework */; };
 		4C26FCE42453C82E000F87B4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26FCE32453C82E000F87B4 /* TableViewCell.swift */; };
+		4C28C6A724624AE3003D5986 /* RegistryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28C6A624624AE3003D5986 /* RegistryViewController.swift */; };
 		4C652AF72457CB29003413E2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C652AF62457CB29003413E2 /* CustomColor.swift */; };
 		4C652AFA2457CDA6003413E2 /* ButtonsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C652AF92457CDA6003413E2 /* ButtonsExtension.swift */; };
 		4C652AFD2457D25D003413E2 /* ImagesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C652AFC2457D25D003413E2 /* ImagesExtension.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		4285A48D0C1E8B60317A3A88 /* Pods_contest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_contest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C26FCE32453C82E000F87B4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4C28C6A624624AE3003D5986 /* RegistryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryViewController.swift; sourceTree = "<group>"; };
 		4C652AF62457CB29003413E2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		4C652AF92457CDA6003413E2 /* ButtonsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsExtension.swift; sourceTree = "<group>"; };
 		4C652AFC2457D25D003413E2 /* ImagesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesExtension.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4CEFD1AB24495136000454BE /* AuthViewController.swift */,
+				4C28C6A624624AE3003D5986 /* RegistryViewController.swift */,
 				4CBC5B9D244EB6B400170410 /* TableViewController.swift */,
 				4C26FCE32453C82E000F87B4 /* TableViewCell.swift */,
 				4CBC5B9F244EC0BD00170410 /* DetailViewController.swift */,
@@ -279,6 +282,7 @@
 				4C652AFF2457DA4B003413E2 /* DataModel.swift in Sources */,
 				4C26FCE42453C82E000F87B4 /* TableViewCell.swift in Sources */,
 				4C652AF72457CB29003413E2 /* CustomColor.swift in Sources */,
+				4C28C6A724624AE3003D5986 /* RegistryViewController.swift in Sources */,
 				4CEFD1AA24495136000454BE /* SceneDelegate.swift in Sources */,
 				4CBC5B9E244EB6B400170410 /* TableViewController.swift in Sources */,
 			);
