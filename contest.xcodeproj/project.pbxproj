@@ -24,6 +24,7 @@
 		4CEFD1B124495137000454BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD1B024495137000454BE /* Assets.xcassets */; };
 		4CEFD1B424495137000454BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD1B224495137000454BE /* LaunchScreen.storyboard */; };
 		4CEFD1BC2449754D000454BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD1BB2449754D000454BE /* .gitignore */; };
+		4CF3733D24639EF400417C5B /* ViewsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3733C24639EF400417C5B /* ViewsExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		4CEFD1B324495137000454BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CEFD1B524495137000454BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CEFD1BB2449754D000454BE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4CF3733C24639EF400417C5B /* ViewsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsExtension.swift; sourceTree = "<group>"; };
 		BB8C9CB3DC97ED7BFAFD3975 /* Pods-contest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contest.release.xcconfig"; path = "Target Support Files/Pods-contest/Pods-contest.release.xcconfig"; sourceTree = "<group>"; };
 		D7C44C9C2FD52B8973ED823A /* Pods-contest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contest.debug.xcconfig"; path = "Target Support Files/Pods-contest/Pods-contest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 			children = (
 				4C652AF92457CDA6003413E2 /* ButtonsExtension.swift */,
 				4C652AFC2457D25D003413E2 /* ImagesExtension.swift */,
+				4CF3733C24639EF400417C5B /* ViewsExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				4C652AFA2457CDA6003413E2 /* ButtonsExtension.swift in Sources */,
 				4CBC5BA0244EC0BD00170410 /* DetailViewController.swift in Sources */,
+				4CF3733D24639EF400417C5B /* ViewsExtension.swift in Sources */,
 				4CEFD1AC24495136000454BE /* AuthViewController.swift in Sources */,
 				4C652AFD2457D25D003413E2 /* ImagesExtension.swift in Sources */,
 				4CEFD1A824495136000454BE /* AppDelegate.swift in Sources */,

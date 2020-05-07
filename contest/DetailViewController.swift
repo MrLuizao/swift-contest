@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.setHidesBackButton(false, animated: true)
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
         let completeName = first_name + "  " + last_name
         title = completeName

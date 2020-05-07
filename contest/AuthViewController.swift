@@ -57,12 +57,15 @@ class AuthViewController: UIViewController {
     private func initSession(result: AuthDataResult?, error:Error?){
          
         if let _ = result, error == nil{
-                
+            self.removeSpinner()
+            
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "table")
             self.navigationController?.pushViewController(viewController, animated: true)
             
         }else{
+            self.removeSpinner()
+            
             let alertController = UIAlertController(
                 title: "Error al iniciar sesión",
                 message: "Ingresa correo y contraseña válidos",
@@ -76,11 +79,12 @@ class AuthViewController: UIViewController {
     }
 
     
-//método para realizar un login de usuarios
+//método para realizar login de usuarios
     @IBAction func logginButtonAction(_ sender: Any) {
         
         if let loginMail = userTextField.text, let loginPass = passTextField.text{
-
+            self.showSpinner()
+            
             Auth.auth().signIn(withEmail: loginMail, password: loginPass){
                 (result, error) in
                 self.initSession(result: result, error: error)

@@ -15,24 +15,26 @@ class RegistryViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
-            let authViewController = AuthViewController()
+    var loader = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.registryBtn.loginBTN()
-        
     }
     
     @IBAction func registryActionBtn(_ sender: Any) {
-
-        _ = UIStoryboard(name: "Main", bundle: nil)
         
-        if let registMail = userTextField.text, let registPass = passTextField.text{
+        _ = UIStoryboard(name: "Main", bundle: nil)
 
+        if let registMail = userTextField.text, let registPass = passTextField.text{
+            self.showSpinner()
+            
             Auth.auth().createUser(withEmail: registMail, password: registPass) {
                 (result, error) in
+                
                 if let _ = result, error == nil{
+                    self.removeSpinner()
                     
                     let alertController = UIAlertController(
                         title: "Usuario creado.",
@@ -43,11 +45,13 @@ class RegistryViewController: UIViewController {
                         title: "Aceptar", style: .default))
 
                     self.present(alertController, animated: true, completion: nil)
-                    
+
                     self.userTextField.text = nil
                     self.passTextField.text = nil
 
                 }else{
+                    self.removeSpinner()
+                    
                     let alertController = UIAlertController(
                         title: "Error al crear registro",
                         message: "Ingresa los campos solicitados",
