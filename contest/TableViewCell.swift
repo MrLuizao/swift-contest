@@ -8,7 +8,6 @@
 
 import UIKit
 
-//clase que establece propiedades de las celdas en la tabla
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelCell: UILabel!
@@ -18,7 +17,6 @@ class TableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-//valores por defecto de las celdas
         super.setSelected(selected, animated: animated)
     }
 

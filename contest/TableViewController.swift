@@ -7,13 +7,11 @@
 //
 
 import UIKit
-//librerias para la peticion y muestra de datos desde un api
 import Alamofire
 import SwiftyJSON
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-//declaracion de los elementos y variables
     @IBOutlet weak var tableApiList: UITableView!
     
     var dataPhoto = [String]()
@@ -21,17 +19,14 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var dataLast = [String]()
     var dataMail = [String]()
 
-    override func viewDidLoad() {//inicia ciclo de vida de la vista
+    override func viewDidLoad() {
         super.viewDidLoad()
         
-//se establecen opciones para los elemntos de la barra de navegación
         self.navigationItem.setHidesBackButton(true, animated: false)
         title = "Lista de Usuarios"
-//se inicializa la funcion que obtiene los datos desde la api
         getData()
     }
     
-//metodo que realiza peticion al servicio
     func getData(){
         
         let apiurl = "https://reqres.in/api/users"
@@ -73,7 +68,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     }
     
-//se establecen los valores de la tabla y las celdas
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataName.count
     }

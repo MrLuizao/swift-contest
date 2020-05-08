@@ -7,13 +7,11 @@
 //
 
 import UIKit
-//se importa la librería para realizar autenticación de usuarios
 import FirebaseAuth
 
 
 class AuthViewController: UIViewController {
     
-//se declaran los elementos de la vista
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginDataView: UIView!
     @IBOutlet weak var loginUserLineView: UIView!
@@ -27,33 +25,27 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//se instancia funcionalidad para reconocer gestos al hacer tap
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AuthViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-//se inicializan los elementos asociados a la vista
         logginButton.loginBTN()
         registryButton.setTitleColor(CustomColor().primaryColor, for: .normal)
     }
     
     override public func viewWillAppear(_ animated: Bool) {
-//se asignan ediciones a la vista antes de mostarse
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
 
     override public func viewWillDisappear(_ animated: Bool) {
-//se asignan ediciones a la vista antes de ocultarse
         self.navigationController?.isNavigationBarHidden = false
         super.viewWillDisappear(animated)
     }
     
-//función para esconder el teclado al hacer tap
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
-//funcion que valida los datos y regresa un mensaje o navega al home al iniciar sesion
     private func initSession(result: AuthDataResult?, error:Error?){
          
         if let _ = result, error == nil{
@@ -79,7 +71,6 @@ class AuthViewController: UIViewController {
     }
 
     
-//método para realizar login de usuarios
     @IBAction func logginButtonAction(_ sender: Any) {
         
         if let loginMail = userTextField.text, let loginPass = passTextField.text{
@@ -93,7 +84,6 @@ class AuthViewController: UIViewController {
     }
 
     @IBAction func registryButtonAction(_ sender: Any) {
-//navegacion hacia el modal de registro de usuarios
     }
 }
 

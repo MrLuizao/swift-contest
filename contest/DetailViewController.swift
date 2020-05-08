@@ -10,13 +10,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-//se asigna un tipado a las variables
     var avatar : String = ""
     var first_name : String = ""
     var last_name : String = ""
     var email : String = ""
     
-//se declaran los elementos de la vista
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastnameLabel: UILabel!
@@ -34,7 +32,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear( animated )
-//se valida el tipo de imagen para mostrarla en la vista
         guard let imageUrl:URL = URL(string: avatar) else {
             return
         }
