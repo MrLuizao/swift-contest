@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    @IBOutlet weak var goToCrudBtn: UIButton!
     @IBOutlet weak var tableApiList: UITableView!
     
     var dataPhoto = [String]()
@@ -25,6 +26,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationItem.setHidesBackButton(true, animated: false)
         title = "Lista de Usuarios"
         getData()
+        
+        goToCrudBtn.loginBTN()
     }
     
     func getData(){
@@ -95,6 +98,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationController?.pushViewController(detailCtrl, animated: true)
 
     }
+    
+    @IBAction func goToCrudBtnAction(_ sender: Any) {
+//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyBoard.instantiateViewController(withIdentifier: "table")
+//        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
     @IBAction func closeSessionBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

@@ -256,8 +256,63 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqa-GX-nsn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationItem id="m3I-QV-fTq"/>
             </objects>
             <point key="canvasLocation" x="-2078.2608695652175" y="841.74107142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qlc-N4-8xx">
+            <objects>
+                <viewController id="1jQ-b1-4E7" customClass="CRUDViewController" customModule="Contest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t78-3p-1An">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cch-DR-3si">
+                                <rect key="frame" x="20" y="752" width="83" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Regresar">
+                                    <color key="titleColor" red="0.60392156860000001" green="0.23529411759999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToList:" destination="xWh-L1-gTi" eventType="touchUpInside" id="drN-po-BqJ"/>
+                                    <action selector="popNavigateBtn:" destination="1jQ-b1-4E7" eventType="touchUpInside" id="vbz-Us-CxA"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z6o-e2-v1i">
+                                <rect key="frame" x="0.0" y="87" width="414" height="635"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAJ-IS-u4e">
+                                <rect key="frame" x="268" y="31" width="126" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Crear Usuario">
+                                    <color key="titleColor" red="0.60392156860000001" green="0.23529411759999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addUserBtn:" destination="1jQ-b1-4E7" eventType="touchUpInside" id="KSV-SM-P4w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cch-DR-3si" firstAttribute="leading" secondItem="pT7-rs-FII" secondAttribute="leading" constant="20" id="2aD-tJ-yDr"/>
+                            <constraint firstItem="Z6o-e2-v1i" firstAttribute="top" secondItem="pT7-rs-FII" secondAttribute="top" constant="87" id="AR0-LI-c52"/>
+                            <constraint firstItem="cch-DR-3si" firstAttribute="top" secondItem="Z6o-e2-v1i" secondAttribute="bottom" constant="30" id="CSW-Vg-lbc"/>
+                            <constraint firstItem="Z6o-e2-v1i" firstAttribute="trailing" secondItem="pT7-rs-FII" secondAttribute="trailing" id="LXk-8z-Sbk"/>
+                            <constraint firstItem="pT7-rs-FII" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cch-DR-3si" secondAttribute="trailing" symbolic="YES" id="kmw-VJ-DdB"/>
+                            <constraint firstItem="pT7-rs-FII" firstAttribute="trailing" secondItem="hAJ-IS-u4e" secondAttribute="trailing" constant="20" id="tpf-4m-uIe"/>
+                            <constraint firstItem="Z6o-e2-v1i" firstAttribute="top" secondItem="hAJ-IS-u4e" secondAttribute="bottom" constant="20" id="uQZ-Gl-cyK"/>
+                            <constraint firstItem="pT7-rs-FII" firstAttribute="bottom" secondItem="cch-DR-3si" secondAttribute="bottom" constant="20" id="yrd-HG-llM"/>
+                            <constraint firstItem="Z6o-e2-v1i" firstAttribute="leading" secondItem="pT7-rs-FII" secondAttribute="leading" id="yx0-l3-jzZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pT7-rs-FII"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pF9-02-0gG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Goc-33-q3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1368.1159420289855" y="841.74107142857144"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="lEl-J5-26d">
@@ -268,7 +323,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pkm-Ne-Ofm">
-                                <rect key="frame" x="0.0" y="44" width="414" height="737"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="93" id="hWz-30-J0b" customClass="TableViewCell" customModule="Contest" customModuleProvider="target">
@@ -302,8 +357,22 @@
                                     <outlet property="delegate" destination="Iey-OH-WTp" id="hr4-ye-rO7"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmz-9r-dy7">
+                                <rect key="frame" x="16" y="740" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Nbz-fm-Iaq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="jlJ-Z9-FuG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <state key="normal" title="ir al CRUD"/>
+                                <connections>
+                                    <action selector="goToCrudBtnAction:" destination="Iey-OH-WTp" eventType="touchUpInside" id="0Nu-cG-iBf"/>
+                                    <action selector="logginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kzd-Kr-Lhe"/>
+                                    <segue destination="1jQ-b1-4E7" kind="show" id="r06-EF-zQ1"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plp-00-KNv">
-                                <rect key="frame" x="16" y="787" width="382" height="40"/>
+                                <rect key="frame" x="16" y="807" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="3o7-EJ-09K"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="ZmO-oa-FwC"/>
@@ -324,18 +393,22 @@
                         <constraints>
                             <constraint firstItem="n60-fs-p1C" firstAttribute="trailing" secondItem="plp-00-KNv" secondAttribute="trailing" constant="16" id="233-S9-9OZ"/>
                             <constraint firstItem="n60-fs-p1C" firstAttribute="trailing" secondItem="Pkm-Ne-Ofm" secondAttribute="trailing" id="6UG-da-D2w"/>
-                            <constraint firstItem="n60-fs-p1C" firstAttribute="bottom" secondItem="plp-00-KNv" secondAttribute="bottom" constant="35" id="8et-fq-EcD"/>
+                            <constraint firstItem="plp-00-KNv" firstAttribute="top" secondItem="hmz-9r-dy7" secondAttribute="bottom" constant="27" id="6ZS-6N-mUB"/>
+                            <constraint firstItem="n60-fs-p1C" firstAttribute="bottom" secondItem="plp-00-KNv" secondAttribute="bottom" constant="15" id="8et-fq-EcD"/>
                             <constraint firstItem="n60-fs-p1C" firstAttribute="trailing" secondItem="plp-00-KNv" secondAttribute="trailing" constant="16" id="HjQ-bj-1fl"/>
+                            <constraint firstItem="n60-fs-p1C" firstAttribute="trailing" secondItem="hmz-9r-dy7" secondAttribute="trailing" constant="16" id="NpK-2d-ufe"/>
                             <constraint firstItem="Pkm-Ne-Ofm" firstAttribute="top" secondItem="n60-fs-p1C" secondAttribute="top" id="PTT-lX-uHl"/>
                             <constraint firstItem="plp-00-KNv" firstAttribute="leading" secondItem="n60-fs-p1C" secondAttribute="leading" constant="16" id="PVj-hk-mvx"/>
                             <constraint firstItem="plp-00-KNv" firstAttribute="leading" secondItem="n60-fs-p1C" secondAttribute="leading" constant="16" id="Rax-Gl-66r"/>
                             <constraint firstItem="Pkm-Ne-Ofm" firstAttribute="leading" secondItem="n60-fs-p1C" secondAttribute="leading" id="XkB-AP-xiq"/>
-                            <constraint firstItem="n60-fs-p1C" firstAttribute="bottom" secondItem="Pkm-Ne-Ofm" secondAttribute="bottom" constant="81" id="qjT-kF-Kvd"/>
+                            <constraint firstItem="n60-fs-p1C" firstAttribute="bottom" secondItem="Pkm-Ne-Ofm" secondAttribute="bottom" constant="141" id="qjT-kF-Kvd"/>
+                            <constraint firstItem="hmz-9r-dy7" firstAttribute="leading" secondItem="n60-fs-p1C" secondAttribute="leading" constant="16" id="ueS-8e-d4U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n60-fs-p1C"/>
                     </view>
                     <navigationItem key="navigationItem" id="Eg6-Rv-N8P"/>
                     <connections>
+                        <outlet property="goToCrudBtn" destination="hmz-9r-dy7" id="XiS-KR-LrS"/>
                         <outlet property="tableApiList" destination="Pkm-Ne-Ofm" id="kak-el-vp5"/>
                     </connections>
                 </viewController>
@@ -402,8 +475,8 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1i-hl-A7n">
-                                <rect key="frame" x="20" y="809" width="69" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="806" width="83" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Regresar">
                                     <color key="titleColor" red="0.60392156860000001" green="0.23529411759999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

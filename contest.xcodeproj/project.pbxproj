@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2BA5C3E1EBFC75ED8F8DAACA /* Pods_contest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4285A48D0C1E8B60317A3A88 /* Pods_contest.framework */; };
+		4C1934ED246BA299003A64B1 /* CrudTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1934EC246BA299003A64B1 /* CrudTableViewController.swift */; };
+		4C1934F0246BB0A0003A64B1 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1934EF246BB0A0003A64B1 /* AlertService.swift */; };
+		4C1934F2246BB14C003A64B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1934F1246BB14C003A64B1 /* User.swift */; };
 		4C26FCE42453C82E000F87B4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26FCE32453C82E000F87B4 /* TableViewCell.swift */; };
 		4C28C6A724624AE3003D5986 /* RegistryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28C6A624624AE3003D5986 /* RegistryViewController.swift */; };
 		4C652AF72457CB29003413E2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C652AF62457CB29003413E2 /* CustomColor.swift */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		4285A48D0C1E8B60317A3A88 /* Pods_contest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_contest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1934EC246BA299003A64B1 /* CrudTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudTableViewController.swift; sourceTree = "<group>"; };
+		4C1934EF246BB0A0003A64B1 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		4C1934F1246BB14C003A64B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4C26FCE32453C82E000F87B4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4C28C6A624624AE3003D5986 /* RegistryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryViewController.swift; sourceTree = "<group>"; };
 		4C652AF62457CB29003413E2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -79,6 +85,14 @@
 				BB8C9CB3DC97ED7BFAFD3975 /* Pods-contest.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4C1934EE246BB067003A64B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4C1934EF246BB0A0003A64B1 /* AlertService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		4C652AF82457CC81003413E2 /* Styles */ = {
@@ -134,6 +148,8 @@
 				4CBC5B9D244EB6B400170410 /* TableViewController.swift */,
 				4C26FCE32453C82E000F87B4 /* TableViewCell.swift */,
 				4CBC5B9F244EC0BD00170410 /* DetailViewController.swift */,
+				4C1934EC246BA299003A64B1 /* CrudTableViewController.swift */,
+				4C1934F1246BB14C003A64B1 /* User.swift */,
 				4CEFD1AD24495136000454BE /* Main.storyboard */,
 				4CEFD1B024495137000454BE /* Assets.xcassets */,
 				4CEFD1B224495137000454BE /* LaunchScreen.storyboard */,
@@ -141,6 +157,7 @@
 				4CEFD1A724495136000454BE /* AppDelegate.swift */,
 				4CA6234324498A6F009A37C5 /* GoogleService-Info.plist */,
 				4CEFD1B524495137000454BE /* Info.plist */,
+				4C1934EE246BB067003A64B1 /* Services */,
 				4C652AF82457CC81003413E2 /* Styles */,
 				4C652AFB2457D01F003413E2 /* Extensions */,
 				4C652B002457DBCD003413E2 /* Models */,
@@ -279,6 +296,8 @@
 			files = (
 				4C652AFA2457CDA6003413E2 /* ButtonsExtension.swift in Sources */,
 				4CBC5BA0244EC0BD00170410 /* DetailViewController.swift in Sources */,
+				4C1934F0246BB0A0003A64B1 /* AlertService.swift in Sources */,
+				4C1934ED246BA299003A64B1 /* CrudTableViewController.swift in Sources */,
 				4CF3733D24639EF400417C5B /* ViewsExtension.swift in Sources */,
 				4CEFD1AC24495136000454BE /* AuthViewController.swift in Sources */,
 				4C652AFD2457D25D003413E2 /* ImagesExtension.swift in Sources */,
@@ -289,6 +308,7 @@
 				4C28C6A724624AE3003D5986 /* RegistryViewController.swift in Sources */,
 				4CEFD1AA24495136000454BE /* SceneDelegate.swift in Sources */,
 				4CBC5B9E244EB6B400170410 /* TableViewController.swift in Sources */,
+				4C1934F2246BB14C003A64B1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
