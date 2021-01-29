@@ -16,3 +16,5 @@ class DataModel{
     var mail : String?
     
 }
+
+
